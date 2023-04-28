@@ -1,0 +1,57 @@
+{
+  "kind": "collectionType",
+  "collectionName": "arts",
+  "info": {
+    "singularName": "art",
+    "pluralName": "arts",
+    "displayName": "Art",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "small_desc": {
+      "type": "richtext"
+    },
+    "long_desc": {
+      "type": "richtext"
+    },
+    "price": {
+      "type": "biginteger"
+    },
+    "pictures": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::category.category",
+      "inversedBy": "arts"
+    },
+    "tags": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::tag.tag",
+      "inversedBy": "arts"
+    },
+    "linktoart": {
+      "type": "string"
+    },
+    "instruction": {
+      "type": "richtext"
+    }
+  }
+}
